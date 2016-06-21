@@ -13,6 +13,29 @@
 
   <body>
 
+  <div class="top-bar" data-topbar>
+    <div class="top-bar-title">
+      <strong>Budget Calculator</strong>
+    </div>
+    <div id="responsive-menu">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><%= link_to "Expenses", "#" %></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% unless user_signed_in? %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% else  %>
+              <li><%= link_to "Log Out #{current_user.email}?", destroy_user_session_path, method: :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="column medium-12 large-10 medium-centered">
       <% if notice.present? -%>
