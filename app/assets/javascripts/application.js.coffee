@@ -15,5 +15,6 @@
 #= require foundation
 #= require turbolinks
 
-() ->
+$ ->
   $(document).foundation()
+  return

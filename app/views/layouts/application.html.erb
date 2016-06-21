@@ -13,26 +13,28 @@
 
   <body>
 
-  <div class="top-bar" data-topbar>
-    <div class="top-bar-title">
-      <strong>Budget Calculator</strong>
+
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar" id="example-menu" data-topbar>
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Budget</li>
+        <li><%= link_to "Expenses", "#" %></li>
+      </ul>
     </div>
-    <div id="responsive-menu">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><%= link_to "Expenses", "#" %></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <% unless user_signed_in? %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% else  %>
-              <li><%= link_to "Log Out #{current_user.email}?", destroy_user_session_path, method: :delete %></li>
-          <% end %>
-        </ul>
-      </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <% unless user_signed_in? %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% else  %>
+            <li><%= link_to "Log Out #{current_user.email}?", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
