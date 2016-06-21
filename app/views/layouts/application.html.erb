@@ -13,7 +13,20 @@
 
   <body>
 
-    <%= yield %>
+  <div class="row">
+    <div class="column medium-12 large-10 medium-centered">
+      <% if notice.present? -%>
+        <div data-alert class="alert-box success radius"><%= notice %> <a href="#" class="close">&times;</a></div>
+      <% end %>
+
+      <% if alert.present? -%>
+        <div data-alert class="alert-box alert radius"><%= alert %> <a href="#" class="close">&times;</a></div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </div>
+
 
   </body>
 </html>

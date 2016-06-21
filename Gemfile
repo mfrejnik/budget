@@ -9,6 +9,10 @@ gem 'pg'
 gem 'sassc-rails', '~> 1.2', '>= 1.2.1'
 gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
 
+# AUTH
+gem 'devise', '~> 4.1', '>= 4.1.1'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
