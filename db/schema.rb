@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621133013) do
+ActiveRecord::Schema.define(version: 20160622213544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price_cents",      default: 0,     null: false
+    t.string   "price_currency",   default: "EUR", null: false
+    t.integer  "category",         default: 0
+    t.boolean  "outdated"
+    t.integer  "classification",   default: 0
+    t.date     "purchase_date"
+    t.integer  "vendor",           default: 0
+    t.date     "accounting_month"
+    t.text     "memo"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "transactions", ["category"], name: "index_transactions_on_category", using: :btree
+  add_index "transactions", ["classification"], name: "index_transactions_on_classification", using: :btree
+  add_index "transactions", ["vendor"], name: "index_transactions_on_vendor", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
