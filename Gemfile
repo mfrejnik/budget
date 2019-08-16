@@ -10,7 +10,7 @@ gem 'sassc-rails', '~> 1.2', '>= 1.2.1'
 gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
 
 # AUTH
-gem 'devise', '~> 4.1', '>= 4.1.1'
+gem 'devise', '~> 4.6'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 
 # Use Uglifier as compressor for JavaScript assets
