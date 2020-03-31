@@ -7,7 +7,7 @@ gem 'pg'
 
 # ASSETS
 gem 'sassc-rails', '~> 1.2', '>= 1.2.1'
-gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
+gem 'foundation-rails', '~> 6.6'
 
 # AUTH
 gem 'devise', '~> 4.1', '>= 4.1.1'
